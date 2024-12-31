@@ -1,0 +1,316 @@
+.section {
+	@apply pt-14;
+}
+.wrapper {
+	@apply flex justify-between gap-5;
+}
+.account {
+	@apply w-full;
+	min-height: 216px;
+}
+.skeleton {
+	height: 216px;
+}
+.box {
+	@apply relative flex justify-between gap-7;
+	backdrop-filter: blur(5px);
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	padding: 23px 26px;
+	background-color: rgba(33, 33, 42, 0.74);
+	transition: border-radius 300ms ease-out;
+
+	&.other {
+		@apply h-full items-center px-12;
+		border-bottom-left-radius: 12px;
+		border-bottom-right-radius: 12px;
+
+		.user {
+			@apply gap-6;
+		}
+
+		.info {
+			@apply flex-row items-center justify-start;
+		}
+
+		.username {
+			@apply mb-0 flex-col items-start;
+			font-size: 20px;
+		}
+	}
+}
+.user {
+	@apply flex gap-3.5 flex-grow;
+
+	> img {
+		border-radius: 8px;
+	}
+}
+.info {
+	@apply w-full flex flex-col justify-center items-start;
+	max-width: 150px;
+}
+.username > span:first-child,
+.balance {
+	@apply text-ellipsis;
+}
+.username {
+	@apply w-full mb-2 flex items-center gap-2 transition-colors;
+	color: #b0b1ba;
+	font-size: 15px;
+
+	> svg {
+		@apply min-w-4 max-w-4 min-h-4 max-h-4 transition-colors;
+		fill: #8b8e9e;
+	}
+
+	&:hover {
+		color: #bfc3d3;
+
+		.steam {
+			background-color: #383848;
+			color: #a7abbf;
+		}
+
+		svg {
+			fill: #a7abbf;
+		}
+	}
+}
+.steam {
+	@apply uppercase font-bold py-2 px-3 flex items-end gap-2 transition-colors;
+	font-size: 11px;
+	border-radius: 7px;
+	background-color: #303040;
+	color: #8b8e9e;
+
+	> svg {
+		@apply w-3.5 h-3.5 transition-colors;
+		fill: #8b8e9e;
+	}
+}
+.balance {
+	@apply font-bold;
+	font-size: 18px;
+}
+.buttons {
+	@apply flex gap-3.5;
+}
+.deposit,
+.logout {
+	@apply uppercase flex items-center gap-2 transition-colors;
+	font-size: 12px;
+}
+.deposit {
+	@apply px-5 font-black;
+	border-radius: 7px;
+	background-color: #64ce82;
+	color: #272735;
+
+	&:hover {
+		background-color: #59caa1;
+		color: #272735;
+	}
+}
+.logout {
+	> svg {
+		@apply w-5 h-5;
+		stroke-width: 1.5px;
+	}
+
+	&:hover {
+		color: #ef6a72;
+	}
+}
+.preview {
+	@apply relative;
+	min-width: 500px;
+
+	> img {
+		@apply image-like-bg-cover;
+		border-radius: 12px;
+	}
+}
+.skeleton {
+	@apply block;
+
+	> span {
+		border-radius: 12px;
+	}
+}
+
+@media (max-width: 1350px) {
+	.balance {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.section {
+		@apply pt-12;
+	}
+	.account.current {
+		min-height: 212px;
+	}
+	.skeleton {
+		height: 212px;
+	}
+	.box {
+		@apply items-center;
+	}
+	.logout,
+	.deposit {
+		font-size: 10px;
+
+		> svg {
+			width: 19px;
+			height: 19px;
+		}
+	}
+	.deposit {
+		@apply px-4;
+		height: 42px;
+	}
+	.username {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 1100px) {
+	.account.other {
+		min-height: 130px;
+	}
+	.box.other {
+		@apply py-0 px-5;
+
+		.info {
+			@apply flex flex-col items-start justify-center;
+		}
+
+		.user > img {
+			width: 90px;
+			height: 90px;
+		}
+
+		.username {
+			font-size: 16px;
+		}
+	}
+	.preview {
+		@apply hidden;
+	}
+}
+
+@media (max-width: 900px) {
+	.section {
+		@apply pt-10;
+	}
+	.user {
+		@apply flex gap-3.5 flex-grow;
+
+		> img {
+			border-radius: 6px;
+		}
+	}
+	.balance {
+		font-size: 14px;
+	}
+	.account.other {
+		min-height: 82px;
+	}
+	.box.other {
+		@apply py-0 px-4;
+
+		.user {
+			@apply w-full items-center gap-4;
+
+			> img {
+				width: 50px;
+				height: 50px;
+			}
+		}
+
+		.username {
+			@apply flex-row items-center gap-4;
+			font-size: 14px;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.section {
+		@apply pt-8;
+	}
+	.account.current {
+		min-height: 236px;
+	}
+	.skeleton {
+		height: 236px;
+
+		> span {
+			border-radius: 8px;
+		}
+	}
+	.box {
+		@apply p-4 flex-col items-start gap-3.5;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+
+		&.other {
+			border-bottom-left-radius: 8px;
+			border-bottom-right-radius: 8px;
+		}
+	}
+	.buttons {
+		@apply w-full;
+	}
+	.deposit {
+		@apply w-full h-9 justify-between;
+		border-radius: 4px;
+	}
+	.logout {
+		@apply w-fit whitespace-nowrap;
+	}
+	.username {
+		@apply gap-1.5 mb-1.5;
+
+		> svg {
+			@apply min-w-3.5 max-w-3.5 min-h-3.5 max-h-3.5;
+		}
+	}
+	.user {
+		@apply gap-2.5;
+
+		> img {
+			@apply w-10 h-10;
+			border-radius: 4px;
+		}
+	}
+	.box.other {
+		.user {
+			@apply gap-3;
+
+			> img {
+				@apply w-10 h-10;
+			}
+		}
+
+		.username {
+			font-size: 13px;
+		}
+	}
+	.steam {
+		font-size: 11px;
+		padding: 7px 11px;
+		border-radius: 4px;
+	}
+}
+
+@media (max-width: 400px) {
+	.account.current {
+		min-height: 313px;
+	}
+	.skeleton {
+		height: 313px;
+	}
+}

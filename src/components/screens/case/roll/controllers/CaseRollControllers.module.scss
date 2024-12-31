@@ -1,0 +1,251 @@
+.controllers,
+.buttons {
+	@apply animate-fade flex justify-center gap-5;
+}
+.controllers {
+	@apply mt-10;
+	height: 60px;
+}
+.times {
+	@apply flex;
+	gap: 1px;
+
+	> li:first-child .time {
+		border-top-left-radius: 8px;
+		border-bottom-left-radius: 8px;
+	}
+
+	> li:last-child .time {
+		border-top-right-radius: 8px;
+		border-bottom-right-radius: 8px;
+	}
+}
+.time {
+	@apply h-full uppercase flex items-center justify-center font-black transition-colors;
+	font-size: 13px;
+	min-width: 50px;
+	background-color: #1c1c25;
+	color: #747684;
+
+	&:hover,
+	&.picked {
+		background-color: #20202a;
+		color: #8d8f9e;
+	}
+}
+.open {
+	@apply uppercase px-7 font-black transition-colors;
+	background-color: #f3a45d;
+	color: #392c22;
+	font-size: 13px;
+	border-radius: 8px;
+
+	&:hover {
+		background-color: #fac26f;
+		color: #684933;
+	}
+}
+.buttons,
+.loader {
+	@apply mt-10;
+}
+.buttons {
+	@apply flex gap-2.5;
+	height: 56px;
+}
+.fast {
+	@apply px-5 transition-colors;
+	font-size: 11px;
+	border-radius: 8px;
+	background-color: #1c1c25;
+	color: #b5b7c2;
+
+	&:hover {
+		background-color: #20202a;
+		color: #8d8f9e;
+	}
+}
+.again,
+.sell,
+.contract {
+	@apply flex items-center gap-3 font-bold px-5 transition-colors;
+	font-size: 14px;
+	border-radius: 8px;
+
+	> svg {
+		@apply transition-colors;
+	}
+}
+.again,
+.contract {
+	@apply border-2 bg-transparent;
+}
+.again {
+	border-color: #e59d5d;
+	color: #e69d5d;
+
+	&:hover {
+		border-color: #f8bc76;
+		color: #f8bc76;
+	}
+}
+.sell {
+	background-color: #f3a45d;
+	color: #392c22;
+
+	> svg {
+		fill: #392c22;
+	}
+
+	&:hover {
+		background-color: #fac26f;
+		color: #684933;
+
+		> svg {
+			fill: #684933;
+		}
+	}
+}
+.contract {
+	border-color: #fd9f77;
+	color: #fd9f77;
+
+	&:hover {
+		border-color: #ffb596;
+		color: #ffb596;
+	}
+}
+.loader {
+	@apply animate-fade uppercase font-bold mx-auto flex flex-col items-center gap-4;
+	font-size: 12px;
+	color: #8b8e9e;
+}
+.spinner {
+	width: 30px;
+	height: 30px;
+	border-width: 3px;
+}
+
+@media (max-width: 1200px) {
+	.buttons {
+		height: 51px;
+	}
+	.controllers {
+		@apply gap-4;
+		height: 54px;
+	}
+	.time {
+		font-size: 12px;
+		min-width: 43px;
+	}
+	.open {
+		font-size: 12px;
+	}
+	.again,
+	.sell,
+	.contract {
+		@apply gap-2.5 px-4;
+		font-size: 13px;
+
+		> svg {
+			@apply w-5 h-5;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.buttons,
+	.controllers {
+		@apply h-auto flex-wrap;
+	}
+	.buttons,
+	.loader {
+		@apply mt-7;
+	}
+	.controllers {
+		@apply h-auto mt-5 mx-auto;
+		max-width: 400px;
+	}
+	.again,
+	.sell,
+	.contract {
+		@apply h-11 px-3 whitespace-nowrap;
+		font-size: 12px;
+		border-radius: 7px;
+	}
+	.times,
+	.fast {
+		height: 48px;
+	}
+	.times {
+		@apply order-1;
+	}
+	.fast {
+		@apply order-2;
+	}
+	.open {
+		@apply order-3;
+		height: 50px;
+	}
+	.loader {
+		@apply gap-3;
+		font-size: 11px;
+	}
+	.spinner {
+		width: 25px;
+		height: 25px;
+	}
+}
+
+@media (max-width: 600px) {
+	.controllers {
+		@apply gap-x-2.5;
+	}
+	.again,
+	.sell,
+	.contract {
+		height: 41px;
+		font-size: 11px;
+		border-radius: 6px;
+
+		> svg {
+			@apply w-4 h-4;
+		}
+	}
+	.times,
+	.fast {
+		height: 46px;
+	}
+	.times {
+		> li:first-child .time {
+			border-top-left-radius: 6px;
+			border-bottom-left-radius: 6px;
+		}
+
+		> li:last-child .time {
+			border-top-right-radius: 6px;
+			border-bottom-right-radius: 6px;
+		}
+	}
+	.time {
+		font-size: 10px;
+		min-width: 40px;
+	}
+	.fast {
+		@apply px-4;
+		font-size: 10px;
+		border-radius: 6px;
+	}
+	.open {
+		@apply px-6;
+		height: 46px;
+		font-size: 11px;
+	}
+	.loader {
+		@apply gap-2.5;
+		font-size: 10px;
+	}
+	.spinner {
+		@apply w-5 h-5 border-2;
+	}
+}

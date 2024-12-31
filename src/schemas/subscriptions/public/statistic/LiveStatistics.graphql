@@ -1,0 +1,6 @@
+subscription LiveStatistics {
+	liveStatistics {
+		increment
+		stat
+	}
+}

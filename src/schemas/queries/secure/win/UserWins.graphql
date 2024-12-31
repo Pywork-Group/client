@@ -1,0 +1,23 @@
+query UserWins($query: WinsQueryInput!) {
+	wins(query: $query) {
+		wins {
+			id
+			nameRu
+			nameEn
+			imagePath
+			priceRUB
+			priceUSD
+			priceEUR
+			rarity
+			wear
+			case {
+				imagePath
+				slug
+			}
+			origin
+			status
+			isStatTrak
+		}
+		count
+	}
+}

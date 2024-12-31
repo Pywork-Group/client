@@ -1,0 +1,11 @@
+query User($id: Int!) {
+	user(id: $id) {
+		id
+		steamId
+		username
+		avatarPath
+		balance
+		tradeLink
+		currency
+	}
+}

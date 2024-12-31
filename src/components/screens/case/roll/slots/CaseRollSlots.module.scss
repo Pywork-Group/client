@@ -1,0 +1,332 @@
+.slots {
+	@apply flex flex-wrap gap-10;
+}
+.slot,
+.swiper {
+	border-radius: 16px;
+}
+.slot {
+	@apply w-full animate-fade flex items-center justify-center;
+	background-color: #1b1b24;
+	height: 260px;
+
+	> svg {
+		@apply w-5 h-4 absolute left-0 right-0 z-1 mx-auto;
+
+		&:first-child {
+			@apply -top-2.5;
+		}
+
+		&:last-child {
+			@apply -bottom-2.5;
+		}
+	}
+
+	&.opened {
+		@apply relative;
+
+		&::before,
+		&::after {
+			@apply h-full absolute top-0 bottom-0 z-1;
+			content: '';
+			width: 180px;
+		}
+
+		&::before {
+			@apply left-0;
+			background: linear-gradient(270deg, rgba(27, 28, 40, 0) 0, #1b1b24);
+			border-top-left-radius: 16px;
+			border-bottom-left-radius: 16px;
+		}
+
+		&::after {
+			@apply right-0;
+			background: linear-gradient(90deg, rgba(27, 28, 40, 0) 0, #1b1b24);
+			border-top-right-radius: 16px;
+			border-bottom-right-radius: 16px;
+		}
+	}
+
+	&.half {
+		max-width: calc(50% - 20px);
+	}
+
+	> img {
+		@apply w-auto max-h-full;
+	}
+}
+.swiper,
+.skins {
+	@apply w-full h-full;
+}
+.swiper {
+	@apply animate-fade duration-700 overflow-hidden;
+}
+.skins {
+	@apply flex gap-0.5;
+
+	&.end .skin:not(:nth-child(44)) {
+		@apply animate-fade-out;
+	}
+}
+.skin {
+	@apply h-full;
+	min-width: 200px;
+	max-width: 200px;
+	width: 200px;
+}
+.sell,
+.sold {
+	@apply uppercase max-w-fit absolute top-7 left-5 right-5 mx-auto font-bold;
+	font-size: 10px;
+	border-radius: 6px;
+}
+.sell {
+	@apply animate-fade flex items-center gap-1.5 pl-1.5 transition-colors;
+	background-color: #58b4a3;
+
+	> svg {
+		@apply min-w-4 max-w-4 min-h-4 max-h-4;
+	}
+
+	> span {
+		@apply px-2 text-ellipsis transition-colors;
+		line-height: 34px;
+		border-top-right-radius: 6px;
+		border-bottom-right-radius: 6px;
+		background-color: #4aa796;
+	}
+
+	&:hover {
+		background-color: #71caba;
+
+		> span:last-child {
+			background-color: #5fb1a3;
+		}
+	}
+}
+.sold {
+	@apply block animate-fade px-2;
+	line-height: 34px;
+	background-color: #236256;
+}
+
+@media (max-width: 1400px) {
+	.slots {
+		@apply gap-8;
+	}
+	.slot {
+		height: 230px;
+
+		&.half {
+			max-width: calc(50% - 16px);
+		}
+	}
+	.skin {
+		min-width: 185px;
+		max-width: 185px;
+		width: 185px;
+
+		> img {
+			max-width: 140px;
+			max-height: 105px;
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.slots {
+		@apply gap-6;
+	}
+	.slot {
+		height: 200px;
+
+		&.opened {
+			&::before,
+			&::after {
+				width: 140px;
+			}
+		}
+
+		&.half {
+			max-width: calc(50% - 12px);
+		}
+
+		> svg {
+			&:first-child {
+				@apply -top-2;
+			}
+
+			&:last-child {
+				@apply -bottom-2;
+			}
+		}
+	}
+	.skin {
+		min-width: 160px;
+		max-width: 160px;
+		width: 160px;
+
+		> img {
+			max-width: 125px;
+		}
+	}
+	.sell,
+	.sold {
+		@apply top-6 left-4 right-4;
+		border-radius: 4px;
+	}
+	.sold {
+		line-height: 28px;
+	}
+	.sell {
+		> svg {
+			@apply min-w-3.5 max-w-3.5 min-h-3.5 max-h-3.5;
+		}
+
+		> span {
+			line-height: 28px;
+			border-top-right-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.slot {
+		&.half {
+			@apply max-w-full;
+		}
+
+		> svg {
+			&:first-child {
+				@apply -top-1.5;
+			}
+
+			&:last-child {
+				@apply -bottom-1.5;
+			}
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.slots {
+		@apply gap-4;
+	}
+	.slot {
+		height: 170px;
+
+		> svg {
+			@apply w-4;
+		}
+
+		&.opened {
+			&::before {
+				border-top-left-radius: 10px;
+				border-bottom-left-radius: 10px;
+			}
+
+			&::after {
+				border-top-right-radius: 10px;
+				border-bottom-right-radius: 10px;
+			}
+		}
+	}
+	.slot,
+	.swiper {
+		border-radius: 10px;
+	}
+	.skin {
+		min-width: 140px;
+		max-width: 140px;
+		width: 140px;
+
+		> img {
+			max-width: 110px;
+		}
+	}
+	.sell,
+	.sold {
+		@apply top-5 left-3 right-3;
+	}
+	.sold {
+		line-height: 26px;
+	}
+	.sell {
+		@apply pl-1 gap-1;
+
+		> span {
+			@apply px-1.5;
+			line-height: 26px;
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	.slots {
+		@apply gap-4;
+	}
+	.slot {
+		> svg {
+			&:first-child {
+				@apply -top-1.5;
+			}
+
+			&:last-child {
+				@apply -bottom-1.5;
+			}
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.slot {
+		height: 135px;
+
+		&.opened {
+			&::before,
+			&::after {
+				width: 40px;
+			}
+		}
+
+		> svg {
+			@apply w-3;
+
+			&:first-child {
+				@apply -top-2;
+			}
+
+			&:last-child {
+				@apply -bottom-2;
+			}
+		}
+	}
+	.skin {
+		min-width: 120px;
+		max-width: 120px;
+		width: 120px;
+
+		> img {
+			max-width: 90px;
+		}
+	}
+	.sell,
+	.sold {
+		@apply top-3.5 left-1.5 right-1.5;
+		font-size: 9px;
+	}
+	.sold {
+		line-height: 23px;
+	}
+	.sell {
+		> span {
+			line-height: 23px;
+		}
+
+		> svg {
+			@apply min-w-3 max-w-3 min-h-3 max-h-3;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+query Wins($query: WinsQueryInput!) {
+	wins(query: $query) {
+		wins {
+			nameRu
+			nameEn
+			imagePath
+			rarity
+			case {
+				imagePath
+			}
+			user {
+				id
+				username
+				avatarPath
+			}
+			origin
+		}
+	}
+}

@@ -1,0 +1,84 @@
+.select {
+	font-size: 12px;
+
+	> button {
+		padding: 10px 11px;
+
+		> svg {
+			&:first-child {
+				@apply hidden;
+			}
+
+			&:last-child {
+				@apply w-3.5 h-3.5;
+			}
+		}
+	}
+
+	li > button {
+		padding: 7px 10px;
+	}
+}
+
+@media (max-width: 900px) {
+	.select {
+		font-size: 11px;
+
+		> button,
+		> ul {
+			border-radius: 5px;
+		}
+
+		> button {
+			@apply px-2.5;
+			padding-top: 9px;
+			padding-bottom: 9px;
+		}
+
+		li > button {
+			@apply py-1.5 px-2;
+		}
+	}
+}
+
+@media (max-width: 750px) {
+	.select {
+		font-size: 10px;
+
+		> button {
+			@apply p-2;
+		}
+
+		> ul {
+			padding: 3px 0;
+		}
+	}
+}
+
+@media (max-width: 420px) {
+	.select {
+		> button {
+			@apply py-1 px-1.5;
+			border-radius: 3px;
+
+			> svg {
+				&:first-child {
+					@apply w-4 h-4 block;
+				}
+
+				&:last-child {
+					@apply hidden;
+				}
+			}
+
+			> span {
+				@apply hidden;
+			}
+		}
+
+		> ul {
+			@apply min-w-fit;
+			top: calc(100% + 5px);
+		}
+	}
+}

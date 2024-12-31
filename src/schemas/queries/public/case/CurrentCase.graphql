@@ -1,0 +1,21 @@
+query CurrentCase($slug: String!) {
+	currentCase(slug: $slug) {
+		nameRu
+		nameEn
+		slug
+		imagePath
+		oldPriceRUB
+		oldPriceUSD
+		oldPriceEUR
+		priceRUB
+		priceUSD
+		priceEUR
+		skins {
+			id
+			nameRu
+			nameEn
+			imagePath
+			rarity
+		}
+	}
+}

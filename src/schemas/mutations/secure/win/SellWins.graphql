@@ -1,0 +1,3 @@
+mutation SellWins($items: [Int!]!) {
+	sellWins(items: $items)
+}

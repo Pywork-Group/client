@@ -1,0 +1,17 @@
+query ContractWins($query: WinsQueryInput!) {
+	wins(query: $query) {
+		wins {
+			id
+			skinId
+			nameRu
+			nameEn
+			imagePath
+			rarity
+			priceRUB
+			priceUSD
+			priceEUR
+			isStatTrak
+		}
+		count
+	}
+}

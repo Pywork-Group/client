@@ -1,0 +1,29 @@
+.toaster {
+	font-size: 13px;
+
+	> div > div {
+		max-width: 400px;
+	}
+}
+.error {
+	line-height: 1.6 !important;
+	background-color: #f31559 !important;
+	color: #fff !important;
+}
+.success {
+	line-height: 1.6 !important;
+	background-color: #2ee89a !important;
+	color: #fff !important;
+}
+
+@media (max-width: 900px) {
+	.toaster {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 500px) {
+	.toaster > div > div {
+		@apply max-w-full;
+	}
+}

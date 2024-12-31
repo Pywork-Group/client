@@ -1,0 +1,164 @@
+.user {
+	@apply flex items-center gap-7 ml-7;
+}
+.mobile,
+.deposit {
+	@apply animate-fade font-bold;
+	background-color: #46b975;
+
+	&:hover {
+		background-color: #4ed586;
+	}
+}
+.mobile {
+	@apply hidden;
+}
+.skeleton {
+	border-radius: 10px;
+	min-width: 215px;
+	max-width: 215px;
+	height: 50px;
+}
+.deposit {
+	@apply relative transition-colors py-1.5 px-2.5;
+	border-radius: 8px;
+
+	&::after {
+		@apply absolute top-0 bottom-0 my-auto w-5 h-5 flex items-center justify-center rounded-full text-white;
+		content: '+';
+		font-size: 18px;
+		background: linear-gradient(
+			90deg,
+			#46b975 -2.5%,
+			#348857 31.01%,
+			#104526 55.76%,
+			#0f4525
+		);
+		right: -13px;
+	}
+
+	> svg {
+		width: 22px;
+		height: 22px;
+	}
+}
+.auth {
+	@apply uppercase whitespace-nowrap font-black py-2.5 px-6 flex items-center gap-2 transition-colors;
+	background-color: #46b975;
+	border-radius: 7px;
+
+	> svg {
+		@apply fill-white;
+		width: 26px;
+		height: 26px;
+	}
+
+	&:hover {
+		background-color: #4ed586;
+	}
+}
+
+@media (max-width: 1200px) {
+	.skeleton {
+		min-width: 205px;
+		max-width: 205px;
+		height: 46px;
+	}
+	.deposit > svg {
+		@apply w-5 h-5;
+	}
+	.auth {
+		@apply px-4;
+		font-size: 13px;
+
+		> svg {
+			@apply w-5 h-5;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.skeleton {
+		min-width: 170px;
+		max-width: 170px;
+		height: 36px;
+		border-radius: 6px;
+	}
+	.user {
+		@apply gap-5 ml-5;
+	}
+	.deposit {
+		padding-left: 9px;
+		padding-right: 9px;
+		border-radius: 6px;
+
+		&::after {
+			width: 18px;
+			height: 18px;
+			font-size: 16px;
+			right: -11px;
+		}
+
+		> svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+	.auth {
+		@apply py-2 px-3.5;
+		font-size: 11px;
+		border-radius: 6px;
+	}
+}
+
+@media (max-width: 750px) {
+	.skeleton {
+		min-width: 120px;
+		max-width: 120px;
+		height: 30px;
+		border-radius: 5px;
+	}
+	.deposit {
+		@apply hidden;
+	}
+	.user {
+		@apply items-stretch gap-2.5;
+	}
+	.mobile {
+		@apply whitespace-nowrap py-2 px-2.5 flex items-center gap-2 transition-colors;
+		font-size: 11px;
+		border-radius: 5px;
+	}
+}
+
+@media (max-width: 600px) {
+	.user {
+		@apply ml-4;
+	}
+	.auth {
+		@apply px-2.5;
+		font-size: 10px;
+		padding-top: 7px;
+		padding-bottom: 7px;
+		border-radius: 5px;
+
+		> svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+}
+
+@media (max-width: 420px) {
+	.skeleton {
+		min-width: 105px;
+		max-width: 105px;
+	}
+	.user {
+		@apply ml-3 gap-2;
+	}
+	.mobile {
+		@apply px-1.5;
+		font-size: 10px;
+	}
+}

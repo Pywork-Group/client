@@ -1,0 +1,153 @@
+.about {
+	@apply min-w-fit flex items-start gap-11;
+}
+.logo > svg {
+	min-width: 64px;
+	max-width: 64px;
+}
+.info {
+	@apply h-full flex flex-col items-start justify-between;
+}
+.copyright {
+	@apply whitespace-nowrap uppercase font-black mb-2;
+	font-size: 17px;
+}
+.description {
+	@apply whitespace-nowrap font-light mb-3;
+	font-size: 16px;
+	color: #cecfd6;
+}
+.social {
+	@apply mb-4;
+}
+.placeholder {
+	@apply mb-2;
+	font-size: 15px;
+	color: #484a56;
+}
+.mail {
+	@apply flex items-center gap-2.5 font-light transition-colors;
+	font-size: 15px;
+	color: #934c4c;
+
+	> svg {
+		@apply transition-colors;
+		fill: #934c4c;
+		stroke: #17171f;
+	}
+
+	&:hover {
+		color: #a95353;
+
+		> svg {
+			fill: #a95353;
+		}
+	}
+}
+
+@media (max-width: 1400px) {
+	.description {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.about {
+		@apply gap-6;
+	}
+	.about,
+	.info,
+	.social {
+		@apply items-center;
+	}
+	.logo > svg {
+		min-width: 50px;
+		max-width: 50px;
+	}
+	.info {
+		@apply w-full flex-row gap-8;
+	}
+	.social {
+		@apply gap-2 text-center flex flex-col;
+	}
+	.social,
+	.description,
+	.placeholder {
+		@apply mb-0;
+	}
+	.copyright {
+		@apply mb-1.5;
+		font-size: 16px;
+	}
+	.description,
+	.placeholder,
+	.mail {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 900px) {
+	.copyright {
+		font-size: 14px;
+	}
+	.description,
+	.placeholder,
+	.mail {
+		font-size: 12px;
+	}
+	.mail > svg {
+		width: 22px;
+		height: 22px;
+	}
+	.logo > svg {
+		min-width: 40px;
+		max-width: 40px;
+	}
+}
+
+@media (max-width: 800px) {
+	.social {
+		@apply items-end text-right;
+	}
+	.mail {
+		@apply w-fit absolute bottom-5 left-0 right-0 mx-auto;
+	}
+}
+
+@media (max-width: 600px) {
+	.mail {
+		@apply gap-1.5;
+
+		> svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+	.about {
+		@apply gap-4;
+	}
+	.logo > svg {
+		min-width: 35px;
+		max-width: 35px;
+	}
+	.copyright {
+		font-size: 13px;
+	}
+	.description,
+	.mail {
+		font-size: 11px;
+	}
+	.placeholder {
+		@apply hidden;
+	}
+	.social {
+		@apply absolute right-3;
+	}
+	.mail {
+		@apply left-3 right-auto m-0;
+	}
+	.mail,
+	.social {
+		@apply bottom-4;
+	}
+}

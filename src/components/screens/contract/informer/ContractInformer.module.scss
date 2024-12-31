@@ -1,0 +1,75 @@
+.informer {
+	@apply w-full mx-auto border-2 flex items-center gap-6;
+	max-width: 1000px;
+	padding: 18px 28px;
+	background-color: rgba(195, 33, 70, 0.2);
+	border-color: #c32146;
+	border-radius: 10px;
+
+	> svg {
+		@apply min-w-8 max-w-8 min-h-8 max-h-8;
+		stroke: #ff3153;
+	}
+}
+.heading {
+	@apply font-light mb-2.5;
+	text-shadow: 0 0 20px #c32146;
+	color: #ffb3c4;
+	font-size: 18px;
+}
+.description {
+	@apply leading-lg;
+	font-size: 13px;
+}
+.link {
+	@apply whitespace-nowrap underline underline-offset-4 transition-colors;
+	color: #e59d5d;
+
+	&:hover {
+		color: #f8bc76;
+	}
+}
+.text {
+	@apply inline;
+}
+
+@media (max-width: 1200px) {
+	.informer {
+		padding: 16px 26px;
+	}
+	.heading {
+		font-size: 16px;
+		margin-bottom: 5px;
+	}
+}
+
+@media (max-width: 900px) {
+	.informer {
+		@apply gap-4;
+		border-radius: 8px;
+		padding: 14px 16px;
+	}
+	.heading {
+		font-size: 14px;
+	}
+	.description {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 600px) {
+	.informer {
+		border-radius: 6px;
+		padding: 13px 14px;
+
+		> svg {
+			@apply hidden;
+		}
+	}
+	.heading {
+		font-size: 13px;
+	}
+	.description {
+		font-size: 11px;
+	}
+}

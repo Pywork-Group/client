@@ -1,0 +1,52 @@
+.live {
+	@apply flex justify-center pt-0.5 pl-0.5;
+}
+.wins {
+	@apply w-fit flex gap-0.5 overflow-hidden;
+	height: 105px;
+}
+.win,
+.skeleton {
+	max-width: 160px;
+	min-width: 160px;
+}
+.skeleton > span {
+	@apply h-full;
+
+	> span {
+		border-radius: 3px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.wins {
+		height: 90px;
+	}
+	.win,
+	.skeleton {
+		max-width: 140px;
+		min-width: 140px;
+	}
+}
+
+@media (max-width: 900px) {
+	.wins {
+		height: 77px;
+	}
+	.win,
+	.skeleton {
+		max-width: 120px;
+		min-width: 120px;
+	}
+}
+
+@media (max-width: 600px) {
+	.wins {
+		height: 50px;
+	}
+	.win,
+	.skeleton {
+		max-width: 85px;
+		min-width: 85px;
+	}
+}

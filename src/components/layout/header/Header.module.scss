@@ -1,0 +1,74 @@
+.header {
+	background-color: #1b1c24;
+}
+.wrapper {
+	@apply flex items-center;
+	height: 95px;
+}
+.logo {
+	margin-right: 22px;
+
+	> svg {
+		min-width: 200px;
+		max-width: 200px;
+	}
+}
+.mobile {
+	@apply hidden;
+}
+
+@media (max-width: 1200px) {
+	.wrapper {
+		height: 82px;
+	}
+	.logo > svg {
+		min-width: 170px;
+		max-width: 170px;
+	}
+}
+
+@media (max-width: 900px) {
+	.wrapper {
+		height: 68px;
+	}
+	.logo > svg {
+		min-width: 142px;
+		max-width: 142px;
+	}
+}
+
+@media (max-width: 750px) {
+	.wrapper {
+		height: 62px;
+	}
+	.logo {
+		@apply hidden;
+	}
+	.mobile {
+		@apply block mr-5;
+		min-width: 32px;
+		max-width: 32px;
+	}
+}
+
+@media (max-width: 600px) {
+	.mobile {
+		@apply mr-4;
+	}
+}
+
+@media (max-width: 530px) {
+	.social {
+		@apply hidden;
+	}
+}
+
+@media (max-width: 420px) {
+	.wrapper {
+		height: 55px;
+	}
+	.mobile {
+		min-width: 28px;
+		max-width: 28px;
+	}
+}

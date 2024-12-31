@@ -1,0 +1,17 @@
+subscription LiveWins($userId: Int) {
+	liveWins(userId: $userId) {
+		nameRu
+		nameEn
+		imagePath
+		rarity
+		case {
+			imagePath
+		}
+		user {
+			id
+			username
+			avatarPath
+		}
+		origin
+	}
+}

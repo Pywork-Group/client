@@ -1,0 +1,116 @@
+.section {
+	@apply py-16 pb-20 overflow-hidden;
+}
+.wrapper {
+	@apply relative flex flex-col items-center;
+	padding-top: 500px;
+
+	> img {
+		@apply absolute top-0 -z-1;
+		max-width: 1100px;
+	}
+}
+.heading {
+	@apply text-center font-extrabold mb-4;
+	font-size: 36px;
+}
+.description {
+	@apply mb-8;
+	color: #cecfd6;
+	font-size: 16px;
+}
+.button {
+	@apply uppercase font-black flex items-center gap-1 py-4 pl-6 pr-4 transition-colors;
+	border-radius: 10px;
+	background-color: #f3a45d;
+	color: #392c22;
+
+	> svg {
+		stroke-width: 3px;
+	}
+
+	&:hover {
+		background-color: #fac26f;
+		color: #684933;
+	}
+}
+
+@media (max-width: 1800px) {
+	.wrapper {
+		padding-top: 420px;
+
+		> img {
+			max-width: 950px;
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.section {
+		@apply py-14 pb-16;
+	}
+	.heading {
+		font-size: 32px;
+	}
+	.description {
+		font-size: 15px;
+	}
+	.button {
+		@apply py-4 pl-5 pr-3.5;
+		font-size: 13px;
+
+		> svg {
+			@apply w-5 h-5;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.section {
+		@apply py-10 pb-12;
+	}
+	.wrapper {
+		padding-top: 310px;
+
+		> img {
+			max-width: 700px;
+		}
+	}
+	.heading {
+		font-size: 28px;
+	}
+	.description {
+		font-size: 14px;
+	}
+	.button {
+		@apply py-3.5;
+		font-size: 12px;
+		border-radius: 8px;
+	}
+}
+
+@media (max-width: 600px) {
+	.section {
+		@apply py-8 pb-10;
+	}
+	.wrapper {
+		padding-top: 210px;
+
+		> img {
+			max-width: 480px;
+		}
+	}
+	.heading {
+		@apply mb-3;
+		font-size: 22px;
+	}
+	.description {
+		@apply mb-6;
+		font-size: 12px;
+	}
+	.button {
+		@apply py-3;
+		font-size: 11px;
+		border-radius: 6px;
+	}
+}

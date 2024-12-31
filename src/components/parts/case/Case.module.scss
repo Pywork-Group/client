@@ -1,0 +1,150 @@
+.case {
+	@apply w-full;
+	height: 260px;
+
+	&:hover {
+		.link > img {
+			@apply scale-110;
+		}
+
+		.price {
+			background: #f8bc76;
+			color: #684933;
+		}
+	}
+}
+.link {
+	@apply w-full h-full relative overflow-hidden p-6 font-bold;
+	border-radius: 14px;
+	background: linear-gradient(183deg, #1a1b26 2.26%, #282a38 103.91%);
+
+	&::before {
+		@apply w-full h-full absolute top-0 bottom-0 left-0 right-0 opacity-0 transition-opacity duration-500;
+		background: linear-gradient(195deg, #212330 10.76%, #424557 102.53%);
+		content: '';
+	}
+
+	&:hover {
+		&::before {
+			@apply opacity-100;
+		}
+
+		.preview > img {
+			transform: scale(1.04) translate(-3px, -3px);
+		}
+	}
+}
+.info {
+	@apply relative z-1;
+}
+.name {
+	@apply text-ellipsis mb-3;
+	font-size: 15px;
+}
+.box {
+	@apply flex items-center flex-wrap gap-2;
+}
+.price,
+.oldPrice {
+	font-size: 13px;
+}
+.price {
+	@apply transition-colors;
+	border-radius: 5px;
+	padding: 5px 10px;
+	background: #f3a45d;
+	color: #413327;
+}
+.oldPrice {
+	@apply line-through;
+	color: #ec4f4f;
+}
+.preview {
+	@apply absolute -bottom-10 -right-10;
+	mask-image: linear-gradient(180deg, #000 50%, transparent);
+	max-width: 240px;
+	max-height: 240px;
+
+	> img {
+		@apply transition-transform;
+	}
+}
+
+@media (max-width: 1800px) {
+	.case {
+		height: 250px;
+	}
+	.link {
+		@apply p-5;
+	}
+	.preview {
+		max-width: 220px;
+		max-height: 220px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.case {
+		height: 230px;
+	}
+	.link {
+		border-radius: 10px;
+	}
+	.preview {
+		max-width: 190px;
+		max-height: 190px;
+		bottom: -30px;
+		right: -30px;
+	}
+}
+
+@media (max-width: 900px) {
+	.case {
+		height: 210px;
+	}
+	.link {
+		border-radius: 8px;
+	}
+	.name {
+		font-size: 14px;
+	}
+	.preview {
+		max-height: 160px;
+		max-width: 160px;
+	}
+}
+
+@media (max-width: 600px) {
+	.case {
+		height: 170px;
+	}
+	.link {
+		border-radius: 6px;
+		padding: 15px;
+	}
+	.name {
+		@apply mb-2.5;
+		font-size: 13px;
+	}
+	.price,
+	.oldPrice {
+		font-size: 12px;
+	}
+	.preview {
+		max-height: 140px;
+		max-width: 140px;
+	}
+}
+
+@media(max-width: 420px) {
+	.name {
+		font-size: 12px;
+	}
+	.price,
+	.oldPrice {
+		font-size: 11px;
+	}
+	.price {
+		@apply px-2;
+	}
+}

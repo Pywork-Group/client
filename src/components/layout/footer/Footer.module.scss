@@ -1,0 +1,52 @@
+.footer {
+	@apply py-20;
+	background-color: #1b1c24;
+}
+.wrapper {
+	@apply flex gap-12;
+}
+.fill {
+	@apply w-full flex flex-col justify-between gap-3;
+}
+.note {
+	@apply font-light leading-lg;
+	font-size: 12px;
+	color: #4d4e57;
+}
+
+@media (max-width: 1200px) {
+	.footer {
+		@apply py-14;
+	}
+	.wrapper {
+		@apply flex-col gap-7;
+	}
+	.fill {
+		@apply gap-5;
+	}
+}
+
+@media (max-width: 900px) {
+	.footer {
+		@apply py-11;
+	}
+	.note {
+		font-size: 11px;
+	}
+}
+
+@media (max-width: 800px) {
+	.wrapper,
+	.fill {
+		@apply gap-4;
+	}
+	.footer {
+		@apply relative py-9 pb-16;
+	}
+}
+
+@media (max-width: 600px) {
+	.footer {
+		@apply pt-7 pb-12;
+	}
+}

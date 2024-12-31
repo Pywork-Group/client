@@ -1,0 +1,238 @@
+.section {
+	@apply pt-14 pb-10;
+}
+.heading {
+	@apply font-black mb-6;
+	font-size: 28px;
+}
+.fill {
+	@apply flex items-start gap-6;
+	padding: 25px;
+	background-color: #1b1b24;
+	border-radius: 16px;
+}
+.box {
+	min-width: 400px;
+	max-width: 400px;
+	background: linear-gradient(196deg, #0a0a10 -2.91%, #13131c 89.19%);
+	border-radius: 12px;
+	padding: 25px;
+
+	> img {
+		@apply mx-auto;
+	}
+}
+.type {
+	@apply mb-0.5;
+	color: #cecfd6;
+	font-size: 15px;
+}
+.name {
+	@apply font-bold mb-1;
+	font-size: 22px;
+}
+.rarity {
+	@apply uppercase;
+	font-size: 11px;
+
+	&.CLASSIFIED {
+		@apply classified-text;
+	}
+
+	&.CONSUMER {
+		@apply consumer-text;
+	}
+
+	&.GOLD {
+		@apply gold-text;
+	}
+
+	&.COVERT {
+		@apply covert-text;
+	}
+
+	&.INDUSTRIAL {
+		@apply industrial-text;
+	}
+
+	&.MIL_SPEC {
+		@apply mil-spec-text;
+	}
+
+	&.RESTRICTED {
+		@apply restricted-text;
+	}
+}
+.thumbs {
+	@apply flex flex-wrap justify-center gap-1 mt-2.5;
+}
+.thumb {
+	@apply font-bold py-2.5 px-4 rounded-full;
+	background: #252531;
+	color: #989aa8;
+	font-size: 12px;
+}
+.table {
+	@apply w-full;
+}
+.labels,
+.item {
+	@apply grid gap-2 px-4;
+	grid-template-columns: 2fr 1fr 1fr;
+}
+.labels {
+	@apply font-bold mb-2.5;
+	font-size: 12px;
+	color: rgba(153, 155, 168, 0.35);
+}
+.label,
+.item > span {
+	@apply text-ellipsis;
+}
+.label > span {
+	color: #ff7e35;
+}
+.list {
+	@apply flex flex-col gap-0.5;
+}
+.item {
+	@apply py-4 px-5;
+	background-color: #22222e;
+	border-radius: 9px;
+}
+.wear {
+	color: #cecfd6;
+}
+.price {
+	@apply text-white font-bold;
+}
+
+@media (max-width: 1800px) {
+	.box > img {
+		max-width: 270px;
+		max-height: 206px;
+	}
+	.item {
+		font-size: 13px;
+	}
+	.name {
+		font-size: 20px;
+	}
+	.type {
+		font-size: 13px;
+	}
+	.thumb {
+		font-size: 11px;
+		padding: 9px 16px;
+	}
+}
+
+@media (max-width: 1300px) {
+	.heading {
+		font-size: 26px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.heading {
+		font-size: 24px;
+	}
+	.box > img {
+		max-width: 220px;
+		max-height: 165px;
+	}
+	.name {
+		font-size: 18px;
+	}
+	.type {
+		font-size: 12px;
+	}
+	.type,
+	.item {
+		font-size: 12px;
+	}
+	.fill {
+		@apply p-5;
+		border-radius: 12px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.section {
+		@apply pt-10 pb-8;
+	}
+	.heading {
+		@apply mb-5;
+	}
+}
+
+@media (max-width: 900px) {
+	.heading {
+		font-size: 20px;
+	}
+	.box {
+		@apply max-w-full w-full;
+		min-width: auto;
+
+		> img {
+			max-width: 190px;
+			max-height: 145px;
+		}
+	}
+	.name {
+		font-size: 17px;
+	}
+	.type {
+		font-size: 11px;
+	}
+	.rarity {
+		font-size: 10px;
+	}
+	.fill {
+		@apply flex-col;
+		border-radius: 10px;
+	}
+}
+
+@media (max-width: 600px) {
+	.section {
+		@apply pt-6 pb-6;
+	}
+	.heading {
+		@apply mb-4;
+		font-size: 18px;
+	}
+	.box {
+		@apply p-5;
+		border-radius: 8px;
+
+		> img {
+			max-width: 170px;
+			max-height: 130px;
+		}
+	}
+	.name {
+		font-size: 15px;
+	}
+	.labels {
+		@apply px-3;
+	}
+	.labels,
+	.item {
+		grid-template-columns: 2fr 1.5fr 1.5fr;
+		font-size: 11px;
+	}
+	.item {
+		@apply p-3;
+		border-radius: 6px;
+	}
+	.thumb {
+		@apply py-2 px-3;
+		font-size: 10px;
+	}
+	.fill {
+		@apply gap-5;
+		border-radius: 6px;
+		padding: 15px;
+	}
+}

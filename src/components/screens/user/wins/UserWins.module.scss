@@ -1,0 +1,386 @@
+.section {
+	@apply pt-8 pb-16;
+}
+.head {
+	@apply flex items-center justify-between gap-10 mb-5;
+}
+.head.current {
+	height: 52px;
+}
+.heading {
+	@apply uppercase font-bold flex items-center gap-2.5;
+	font-size: 12px;
+	border-radius: 6px;
+	color: #e69d5d;
+
+	> svg {
+		@apply w-7 h-7;
+		fill: #e59d5d;
+		stroke: #17171f;
+	}
+
+	> span {
+		@apply animate-fade flex items-center justify-center py-1.5 px-2;
+		font-size: 12px;
+		border-radius: 3px;
+		background-color: #4b4749;
+		color: #fdf8ed;
+	}
+}
+.filters {
+	@apply animate-fade h-full relative z-1 flex gap-2.5;
+}
+.select {
+	@apply h-full;
+	font-size: 12px;
+
+	> button {
+		@apply px-4;
+
+		> svg {
+			@apply w-4 h-4;
+		}
+	}
+
+	> ul {
+		@apply min-w-fit;
+	}
+
+	li > button {
+		@apply py-2 px-4 whitespace-nowrap;
+	}
+}
+.action {
+	@apply h-full flex items-center gap-2.5 border px-4 transition-colors;
+	font-size: 13px;
+	border-radius: 8px;
+	border-color: #2e2925;
+	color: #e69d5d;
+
+	&:hover {
+		border-color: #f8bc76;
+		color: #f8bc76;
+	}
+}
+.wins {
+	@apply flex flex-wrap gap-2;
+}
+.win {
+	@apply animate-fade;
+	max-width: calc(100% / 7 - 7px);
+
+	&.available > a > div {
+		@apply transition-opacity;
+	}
+
+	&.available:hover {
+		.case,
+		.contract,
+		.empty {
+			@apply opacity-100 transform-none;
+		}
+
+		> a > div {
+			@apply opacity-50;
+		}
+	}
+
+	&:hover:not(&.available) {
+		> a > img {
+			@apply transform-none;
+		}
+	}
+}
+.won {
+	@apply w-full h-full absolute top-0 bottom-0 left-0 right-0 z-2 p-2;
+}
+.actions {
+	@apply w-fit flex gap-1;
+}
+.sold,
+.contracted,
+.requested,
+.received,
+.sell,
+.request {
+	@apply flex items-center justify-center;
+	width: 30px;
+	height: 30px;
+	border-radius: 3px;
+
+	&::before {
+		@apply invisible text-center absolute left-0 z-2 opacity-0 py-1.5 px-2.5 -translate-y-1.5 transition-all;
+		content: var(--message);
+		bottom: calc(100% + 10px);
+		width: 100px;
+		font-size: 11px;
+		border-radius: 5px;
+		background: rgba(50, 50, 62, 0.99);
+		color: #8b8e9e;
+	}
+
+	&:hover::before {
+		@apply transform-none visible opacity-100;
+	}
+
+	> svg,
+	.loader {
+		width: 18px;
+		height: 18px;
+	}
+}
+.loader {
+	border-width: 2px;
+}
+.sell,
+.request {
+	@apply relative transition-colors;
+}
+.sell {
+	background-color: #64ce82;
+	color: #272735;
+
+	&:hover {
+		background-color: #59caa1;
+	}
+}
+.request {
+	background-color: #f3a45d;
+	color: #392c22;
+
+	&:hover {
+		background-color: #fac26f;
+		color: #684933;
+	}
+}
+.case,
+.empty,
+.contract {
+	@apply absolute z-1 opacity-0 translate-y-2.5 transition-all;
+}
+.sold,
+.contracted,
+.requested,
+.received {
+	@apply border absolute top-2 left-2 z-1;
+}
+.sold,
+.contracted,
+.received {
+	border-color: rgba(67, 79, 72, 0.6);
+}
+.sold > svg {
+	stroke: #64ce82;
+	fill: #64ce82;
+}
+.contracted > svg {
+	stroke: #f3a45d;
+}
+.requested {
+	border-color: #f3a45d;
+
+	> svg {
+		@apply animate-bounce;
+		stroke: #f3a45d;
+	}
+}
+.received > svg {
+	stroke: #a8d66e;
+	fill: #a8d66e;
+}
+.case {
+	@apply bottom-1 right-1;
+}
+.contract {
+	@apply bottom-2 right-3;
+}
+.empty {
+	@apply bottom-2 right-2;
+}
+.skeleton {
+	@apply w-full;
+	height: 140px;
+
+	> span {
+		border-radius: 6px;
+	}
+}
+.found {
+	@apply flex items-center justify-center;
+	font-size: 13px;
+}
+.link {
+	@apply underline underline-offset-4 transition-colors;
+	color: #e59d5d;
+
+	&:hover {
+		color: #f8bc76;
+	}
+}
+.pagination {
+	@apply animate-fade mt-7;
+}
+
+@media (max-width: 1300px) {
+	.win {
+		max-width: calc(100% / 6 - 7px);
+	}
+}
+
+@media (max-width: 1200px) {
+	.section {
+		@apply pb-12;
+	}
+	.head.current {
+		height: 48px;
+	}
+	.sold,
+	.contracted,
+	.requested,
+	.received,
+	.sell,
+	.request {
+		@apply w-7 h-7;
+
+		> svg,
+		.loader {
+			@apply w-4 h-4;
+		}
+
+		> svg {
+			stroke-width: 2.7px;
+		}
+	}
+	.action {
+		font-size: 12px;
+
+		> svg {
+			@apply w-5 h-5;
+		}
+	}
+	.select {
+		font-size: 11px;
+	}
+}
+
+@media (max-width: 1100px) {
+	.win {
+		max-width: calc(20% - 7px);
+	}
+}
+
+@media (max-width: 1000px) {
+	.skeleton {
+		height: 120px;
+	}
+	.case {
+		width: 70px;
+	}
+	.empty {
+		@apply right-2.5;
+		width: 50px;
+	}
+	.contract {
+		@apply bottom-2 right-2.5;
+		width: 55px;
+	}
+	.sold,
+	.contracted,
+	.requested,
+	.received,
+	.sell,
+	.request {
+		width: 26px;
+		height: 26px;
+
+		&::before {
+			@apply -translate-y-0.5;
+			font-size: 10px;
+			bottom: calc(100% + 7px);
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.head.current {
+		height: 42px;
+	}
+	.heading {
+		@apply gap-2;
+		font-size: 11px;
+
+		> span {
+			font-size: 11px;
+		}
+
+		> svg {
+			@apply w-6 h-6;
+		}
+	}
+	.win {
+		max-width: calc(25% - 6px);
+	}
+}
+
+@media (max-width: 700px) {
+	.head.current {
+		@apply flex-col items-start justify-between gap-0;
+		height: 75px;
+	}
+	.filters {
+		height: 38px;
+	}
+	.select {
+		font-size: 10px;
+
+		> button {
+			border-radius: 5px;
+		}
+	}
+	.action {
+		font-size: 11px;
+		border-radius: 5px;
+
+		> svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+	.win {
+		max-width: calc(100% / 3 - 6px);
+	}
+}
+
+@media (max-width: 600px) {
+	.section {
+		@apply pt-6 pb-8;
+	}
+	.wins {
+		@apply gap-1.5;
+	}
+	.win {
+		max-width: calc(50% - 3px);
+	}
+	.pagination {
+		@apply mt-6;
+	}
+	.skeleton > span {
+		border-radius: 4px;
+	}
+}
+
+@media (max-width: 400px) {
+	.head.current {
+		height: 130px;
+	}
+	.filters {
+		@apply w-full h-auto flex-col;
+	}
+	.action,
+	.select {
+		@apply h-10;
+	}
+	.select > button {
+		@apply justify-between;
+	}
+}

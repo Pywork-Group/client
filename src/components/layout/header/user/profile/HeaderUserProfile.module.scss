@@ -1,0 +1,68 @@
+.profile {
+	@apply animate-fade flex items-center gap-4 transition-opacity;
+
+	> img {
+		border-radius: 10px;
+	}
+
+	&:hover {
+		@apply opacity-70;
+	}
+}
+.balance {
+	@apply flex flex-col items-end font-bold;
+}
+.username {
+	@apply uppercase text-ellipsis mb-0.5;
+	max-width: 95px;
+	color: #aea49a;
+	font-size: 10px;
+}
+.coins {
+	@apply text-white;
+	font-size: 15px;
+}
+
+@media (max-width: 1200px) {
+	.profile > img {
+		width: 46px;
+		height: 46px;
+	}
+	.coins {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 900px) {
+	.profile {
+		@apply gap-2.5;
+
+		> img {
+			@apply w-9 h-9;
+			border-radius: 6px;
+		}
+	}
+	.coins {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 750px) {
+	.profile > img {
+		border-radius: 5px;
+		width: 30px;
+		height: 30px;
+	}
+	.balance {
+		@apply hidden;
+	}
+}
+
+@media (max-width: 420px) {
+	.profile > img {
+		min-width: 30px;
+		max-width: 30px;
+		min-height: 30px;
+		max-height: 30px;
+	}
+}

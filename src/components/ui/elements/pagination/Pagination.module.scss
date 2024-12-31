@@ -1,0 +1,42 @@
+.list {
+	@apply flex justify-center gap-1.5;
+}
+.dots,
+.button {
+	@apply w-10 h-10 font-black;
+	font-size: 11px;
+	color: #c9cad3;
+}
+.button {
+	@apply animate-fade uppercase flex items-center justify-center transition-colors;
+	border-radius: 6px;
+	background-color: #1c1c24;
+
+	> svg {
+		@apply w-4 h-4;
+	}
+
+	&.picked {
+		@apply pointer-events-none;
+	}
+
+	&.picked,
+	&:hover {
+		background-color: #22222d;
+		color: #fff;
+	}
+}
+.dots {
+	@apply flex items-center justify-center;
+}
+
+@media (max-width: 600px) {
+	.dots,
+	.button {
+		@apply w-8 h-8;
+		font-size: 10px;
+	}
+	.button {
+		border-radius: 4px;
+	}
+}

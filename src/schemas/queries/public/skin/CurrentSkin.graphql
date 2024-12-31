@@ -1,0 +1,36 @@
+query CurrentSkin($id: Int!) {
+	currentSkin(id: $id) {
+		nameRu
+		nameEn
+		imagePath
+		rarity
+		qualities {
+			priceRUB
+			priceUSD
+			priceEUR
+			statTrakPriceRUB
+			statTrakPriceUSD
+			statTrakPriceEUR
+			wear
+		}
+		cases {
+			nameRu
+			nameEn
+			slug
+			imagePath
+			oldPriceRUB
+			oldPriceUSD
+			oldPriceEUR
+			priceRUB
+			priceUSD
+			priceEUR
+		}
+		similarSkins {
+			id
+			nameRu
+			nameEn
+			imagePath
+			rarity
+		}
+	}
+}

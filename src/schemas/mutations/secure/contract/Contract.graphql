@@ -1,0 +1,14 @@
+mutation Contract($items: [Int!]!) {
+	contract(items: $items) {
+		id
+		skinId
+		nameRu
+		nameEn
+		imagePath
+		rarity
+		priceRUB
+		priceUSD
+		priceEUR
+		isStatTrak
+	}
+}

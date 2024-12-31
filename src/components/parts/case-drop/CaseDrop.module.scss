@@ -1,0 +1,86 @@
+.drop {
+	@apply relative w-full h-full flex items-end;
+	border-radius: 8px;
+
+	> img {
+		@apply absolute top-0 bottom-0 left-0 right-0 m-auto;
+	}
+
+	&.CLASSIFIED {
+		@apply classified;
+	}
+
+	&.CONSUMER {
+		@apply consumer;
+	}
+
+	&.GOLD {
+		@apply gold;
+	}
+
+	&.COVERT {
+		@apply covert;
+	}
+
+	&.INDUSTRIAL {
+		@apply industrial;
+	}
+
+	&.MIL_SPEC {
+		@apply mil-spec;
+	}
+
+	&.RESTRICTED {
+		@apply restricted;
+	}
+}
+.info {
+	@apply w-full relative z-1 text-center;
+	padding: 0 22px 27px;
+}
+.type,
+.name {
+	@apply text-ellipsis;
+}
+.type {
+	@apply mb-0.5 font-light;
+	color: #b3b0b9;
+}
+.name {
+	@apply font-bold;
+	color: #e9e9e9;
+}
+
+@media (max-width: 1400px) {
+	.info {
+		padding: 0 15px 22px;
+	}
+	.name,
+	.type {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.name,
+	.type {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 900px) {
+	.info {
+		padding: 0 15px 15px;
+	}
+	.name,
+	.type {
+		font-size: 11px;
+	}
+}
+
+@media (max-width: 600px) {
+	.name,
+	.type {
+		font-size: 10px;
+	}
+}

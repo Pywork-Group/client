@@ -1,0 +1,171 @@
+.win {
+	@apply animate-fade relative h-full overflow-hidden;
+}
+.link,
+.back,
+.front {
+	@apply w-full h-full;
+}
+.link {
+	@apply inline-block;
+	border-radius: 3px;
+
+	&.CLASSIFIED {
+		@apply classified;
+	}
+
+	&.CONSUMER {
+		@apply consumer;
+	}
+
+	&.GOLD {
+		@apply gold;
+	}
+
+	&.COVERT {
+		@apply covert;
+	}
+
+	&.INDUSTRIAL {
+		@apply industrial;
+	}
+
+	&.MIL_SPEC {
+		@apply mil-spec;
+	}
+
+	&.RESTRICTED {
+		@apply restricted;
+	}
+
+	&:hover {
+		.back {
+			@apply translate-y-0;
+		}
+
+		.front {
+			@apply -translate-y-full;
+		}
+	}
+}
+.back,
+.front {
+	@apply flex;
+	transition: transform 0.5s cubic-bezier(0.28, 0.67, 0.04, 1);
+}
+.front {
+	@apply relative items-center justify-center;
+}
+.user,
+.name {
+	@apply w-full p-3.5;
+}
+.username,
+.name {
+	@apply text-ellipsis;
+	font-size: 12px;
+	color: #e2e3e7;
+}
+.name {
+	@apply absolute left-0 right-0 bottom-0;
+}
+.back {
+	@apply absolute left-0 right-0 top-0 bottom-0 translate-y-full items-end;
+}
+.case,
+.contract,
+.empty {
+	@apply absolute;
+}
+.case {
+	@apply -bottom-10 -right-9;
+}
+.contract {
+	@apply -bottom-6 -right-6;
+}
+.empty {
+	@apply bottom-2 right-2;
+}
+.user > img {
+	@apply rounded-full mb-2;
+}
+.username {
+	@apply relative block;
+}
+
+@media (max-width: 1200px) {
+	.username,
+	.name {
+		font-size: 11px;
+	}
+	.user,
+	.name {
+		padding: 11px 12px;
+	}
+	.user > img {
+		width: 30px;
+		height: 30px;
+	}
+	.front > img {
+		width: 90px;
+		height: 67px;
+	}
+	.case {
+		@apply -right-8;
+		width: 110px;
+	}
+	.contract {
+		@apply -bottom-5;
+		width: 80px;
+	}
+	.empty {
+		@apply bottom-1 right-1;
+	}
+}
+
+@media (max-width: 900px) {
+	.username,
+	.name {
+		font-size: 10px;
+	}
+	.user,
+	.name {
+		padding: 9px 11px;
+	}
+	.user > img {
+		width: 25px;
+		height: 25px;
+	}
+	.front > img {
+		width: 85px;
+		height: 63px;
+	}
+	.case {
+		@apply -bottom-5 -right-4;
+		width: 80px;
+	}
+	.contract {
+		@apply -bottom-4 -right-6;
+		width: 70px;
+	}
+	.empty {
+		@apply bottom-0 right-0;
+	}
+}
+
+@media (max-width: 600px) {
+	.link:hover {
+		.back,
+		.front {
+			@apply transform-none;
+		}
+	}
+	.back,
+	.name {
+		@apply hidden;
+	}
+	.front > img {
+		width: 60px;
+		height: 45px;
+	}
+}

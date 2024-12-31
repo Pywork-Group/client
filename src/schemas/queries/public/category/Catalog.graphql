@@ -1,0 +1,18 @@
+query Catalog {
+	catalog {
+		nameRu
+		nameEn
+		cases {
+			nameRu
+			nameEn
+			slug
+			imagePath
+			oldPriceRUB
+			oldPriceUSD
+			oldPriceEUR
+			priceRUB
+			priceUSD
+			priceEUR
+		}
+	}
+}

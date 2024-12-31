@@ -1,0 +1,89 @@
+.list {
+	@apply w-full flex gap-3;
+}
+.item {
+	@apply w-full flex items-center gap-3.5 p-6;
+	max-width: calc(100% / 3 - 8px);
+	border-radius: 12px;
+	background-color: #1c1d26;
+
+	> svg {
+		@apply min-w-10 max-w-10 min-h-10 max-h-10;
+		stroke: #b68553;
+	}
+}
+.stat {
+	@apply overflow-hidden;
+}
+.count,
+.label {
+	@apply text-ellipsis;
+}
+.count {
+	@apply font-black mb-0.5;
+	font-size: 25px;
+	color: #f5f5f5;
+}
+.label {
+	@apply uppercase;
+	font-size: 11px;
+	color: #71727d;
+}
+
+@media (max-width: 1400px) {
+	.item {
+		@apply p-5;
+	}
+}
+
+@media (max-width: 1200px) {
+	.count {
+		font-size: 23px;
+	}
+}
+
+@media (max-width: 900px) {
+	.count {
+		font-size: 20px;
+	}
+	.label {
+		font-size: 10px;
+	}
+	.item {
+		@apply p-4 gap-3;
+
+		> svg {
+			@apply min-w-8 max-w-8 min-h-8 max-h-8;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.count {
+		font-size: 18px;
+		margin-bottom: 5px;
+	}
+	.label {
+		font-size: 9px;
+	}
+	.list {
+		@apply gap-2 flex-col;
+	}
+	.item {
+		@apply max-w-full p-3.5 gap-2.5;
+		border-radius: 8px;
+
+		> svg {
+			@apply min-w-7 max-w-7 min-h-7 max-h-7;
+		}
+	}
+	.stat {
+		@apply w-full;
+	}
+}
+
+@media (max-width: 420px) {
+	.label {
+		font-size: 8px;
+	}
+}

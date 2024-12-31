@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+a {
+	@apply inline-block;
+}
+
+body {
+	@apply text-white font-base leading-base;
+	font-size: 14px;
+	background-color: #17171f;
+}

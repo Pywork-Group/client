@@ -1,0 +1,3 @@
+mutation UpdateTradeLink($tradeLink: String!) {
+	updateTradeLink(tradeLink: $tradeLink)
+}

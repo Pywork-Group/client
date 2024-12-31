@@ -1,0 +1,3 @@
+mutation RequestWin($winId: Int!) {
+	requestWin(winId: $winId)
+}

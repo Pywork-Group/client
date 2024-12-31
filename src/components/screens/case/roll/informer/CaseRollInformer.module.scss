@@ -1,0 +1,105 @@
+.informer {
+	@apply animate-fade flex flex-col items-center px-3 gap-4;
+	margin-top: -55px;
+}
+.info {
+	@apply inline-block text-center py-5 px-8;
+	backdrop-filter: blur(12px);
+	border-radius: 10px;
+
+	&.enough {
+		background-color: rgba(106, 55, 55, 0.65);
+
+		.heading {
+			color: #ff7e6c;
+		}
+	}
+
+	&.auth {
+		background-color: rgba(86, 68, 51, 0.6);
+
+		.heading {
+			color: #ffc27b;
+		}
+	}
+}
+.heading {
+	@apply uppercase font-black mb-1;
+	font-size: 15px;
+}
+.description {
+	@apply font-light;
+	color: #f0e9e5;
+}
+.deposit,
+.steam {
+	@apply w-fit flex items-center gap-4 uppercase font-bold transition-colors py-4 px-6;
+	font-size: 13px;
+	border-radius: 8px;
+
+	> svg {
+		@apply w-6 h-6;
+	}
+}
+.deposit {
+	background-color: #64ce82;
+	color: #272735;
+
+	&:hover {
+		background-color: #81dd9b;
+		color: #272735;
+	}
+}
+.steam {
+	background-color: #e69d5d;
+	color: #392c22;
+
+	&:hover {
+		background-color: #fac26f;
+		color: #684933;
+	}
+}
+
+@media (max-width: 1200px) {
+	.info {
+		padding: 18px 25px;
+	}
+	.heading {
+		font-size: 14px;
+	}
+	.deposit,
+	.steam {
+		@apply py-3 px-5 gap-3;
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 900px) {
+	.heading,
+	.description {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 600px) {
+	.info {
+		border-radius: 8px;
+		padding: 15px 20px;
+	}
+	.heading,
+	.description {
+		font-size: 12px;
+	}
+	.heading {
+		@apply font-bold;
+	}
+	.deposit,
+	.steam {
+		@apply py-3 px-4 gap-3;
+		font-size: 11px;
+
+		> svg {
+			@apply w-5 h-5;
+		}
+	}
+}

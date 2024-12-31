@@ -1,0 +1,35 @@
+.select {
+	@apply relative;
+}
+.toggle,
+.button {
+	@apply flex items-center gap-2 uppercase;
+}
+.toggle,
+.list {
+	border-radius: 6px;
+	background-color: #22232f;
+}
+.toggle {
+	@apply w-full h-full transition-colors;
+
+	&:hover {
+		background-color: #1f202b;
+	}
+}
+.button {
+	@apply w-full transition-opacity;
+
+	> svg {
+		@apply w-4 h-3;
+	}
+
+	&:hover {
+		@apply opacity-60;
+	}
+}
+.list {
+	@apply w-full animate-fade absolute left-0 right-0 z-2;
+	padding: 5px 0;
+	top: calc(100% + 3px);
+}

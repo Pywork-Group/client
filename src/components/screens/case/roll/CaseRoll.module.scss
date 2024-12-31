@@ -1,0 +1,60 @@
+.section {
+	@apply pt-14;
+}
+.head {
+	@apply relative mb-5 flex items-center justify-center;
+	height: 55px;
+}
+.back {
+	@apply h-fit absolute left-0 flex items-center gap-2.5 my-auto px-5 py-3.5 transition-colors;
+	background-color: #1b1c24;
+	color: #7e8494;
+	border-radius: 8px;
+
+	> svg {
+		@apply w-4 h-4 transition-transform;
+		stroke-width: 3px;
+	}
+
+	&:hover {
+		background-color: #20212b;
+		color: #cecfd6;
+
+		> svg {
+			@apply -translate-x-0.5;
+		}
+	}
+}
+.heading {
+	@apply font-light text-ellipsis;
+	font-size: 28px;
+}
+
+@media (max-width: 1200px) {
+	.heading {
+		font-size: 24px;
+		max-width: 320px;
+	}
+}
+
+@media (max-width: 900px) {
+	.section {
+		@apply pt-10;
+	}
+	.back {
+		@apply hidden;
+	}
+	.head {
+		@apply h-auto;
+	}
+	.heading {
+		@apply max-w-full;
+		font-size: 18px;
+	}
+}
+
+@media(max-width: 600px) {
+	.section {
+		@apply pt-8;
+	}
+}

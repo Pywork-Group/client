@@ -1,0 +1,7 @@
+query Statistics {
+	statistics {
+		wins
+		cases
+		contracts
+	}
+}

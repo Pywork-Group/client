@@ -1,0 +1,238 @@
+.win {
+	@apply animate-fade w-full h-full fixed top-0 bottom-0 left-0 right-0 z-2 flex items-center justify-center px-3;
+	background-color: rgba(13, 13, 19, 0.93);
+}
+.box {
+	@apply flex items-center justify-center;
+}
+.contract {
+	@apply w-fit h-fit absolute left-0 right-0 mx-auto animate-contract;
+}
+.prize {
+	@apply animate-contract-win w-full pt-16;
+	max-width: 650px;
+}
+.preview {
+	@apply relative flex justify-center;
+}
+.background {
+	@apply absolute top-0 bottom-0 left-0 right-0 -z-1 m-auto animate-spin;
+}
+.info {
+	@apply mb-8 mx-auto;
+	max-width: 300px;
+}
+.type,
+.name {
+	@apply text-ellipsis text-center;
+}
+.type {
+	@apply font-light mb-1;
+	color: #b1b1b1;
+	font-size: 15px;
+}
+.name {
+	font-size: 20px;
+}
+.buttons {
+	@apply flex justify-center gap-5 h-14;
+}
+.again,
+.sell {
+	@apply h-full uppercase font-bold flex items-center transition-colors;
+	font-size: 13px;
+	border-radius: 8px;
+}
+.again {
+	@apply gap-3 px-5;
+	background-color: #f3a45d;
+	color: #392c22;
+
+	&:hover {
+		background-color: #fac26f;
+		color: #684933;
+	}
+}
+.sell {
+	@apply transition-colors pl-5;
+	background-color: #58b4a3;
+
+	> svg {
+		stroke-width: 2.5px;
+	}
+
+	> span {
+		@apply h-full flex items-center transition-colors;
+
+		&:nth-child(2) {
+			@apply pl-2 pr-4;
+		}
+
+		&:last-child {
+			@apply px-4 transition-colors;
+			font-size: 14px;
+			background-color: #4aa796;
+			border-bottom-right-radius: 8px;
+			border-top-right-radius: 8px;
+		}
+	}
+
+	&:hover {
+		background-color: #71caba;
+
+		> span:last-child {
+			background-color: #5fb1a3;
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.preview {
+		> img:first-child {
+			max-width: 450px;
+		}
+
+		> img:last-child {
+			max-width: 280px;
+		}
+	}
+	.info {
+		@apply mb-7;
+	}
+	.buttons {
+		@apply h-12;
+	}
+	.type {
+		font-size: 14px;
+	}
+	.name {
+		font-size: 18px;
+	}
+	.again,
+	.sell {
+		font-size: 12px;
+
+		> svg {
+			@apply w-5 h-5;
+		}
+	}
+	.contract > img {
+		max-width: 250px;
+	}
+	.prize {
+		@apply pt-14;
+	}
+}
+
+@media (max-width: 900px) {
+	.preview {
+		> img:first-child {
+			max-width: 400px;
+		}
+
+		> img:last-child {
+			max-width: 240px;
+		}
+	}
+	.info {
+		@apply mb-6;
+	}
+	.buttons {
+		@apply h-11 gap-3;
+	}
+	.type {
+		font-size: 13px;
+	}
+	.name {
+		font-size: 16px;
+	}
+	.again,
+	.sell {
+		font-size: 11px;
+
+		> svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+	.again {
+		@apply px-4;
+	}
+	.sell {
+		@apply pl-3;
+
+		> span:nth-child(2) {
+			@apply pr-3;
+		}
+
+		> span:last-child {
+			@apply px-3;
+			font-size: 13px;
+		}
+	}
+	.contract > img {
+		max-width: 230px;
+	}
+	.prize {
+		@apply pt-12;
+	}
+}
+
+@media (max-width: 600px) {
+	.preview {
+		> img:first-child {
+			max-width: 350px;
+		}
+
+		> img:last-child {
+			max-width: 200px;
+		}
+	}
+	.info {
+		@apply mb-5;
+	}
+	.buttons {
+		@apply h-auto flex-wrap;
+	}
+	.name {
+		font-size: 15px;
+	}
+	.again,
+	.sell {
+		@apply h-10;
+		font-size: 10px;
+
+		> svg {
+			@apply w-4 h-4;
+		}
+	}
+	.again {
+		@apply gap-2;
+		border-radius: 5px;
+	}
+	.sell {
+		@apply pl-2.5;
+		border-radius: 5px;
+
+		> span:nth-child(2) {
+			@apply pr-2.5;
+		}
+
+		> span:last-child {
+			@apply px-2.5;
+			font-size: 12px;
+		}
+	}
+	.contract > img {
+		max-width: 200px;
+	}
+	.prize {
+		@apply pt-10;
+	}
+}
+
+@media (max-width: 400px) {
+	.preview > img:first-child {
+		@apply max-w-full;
+	}
+}

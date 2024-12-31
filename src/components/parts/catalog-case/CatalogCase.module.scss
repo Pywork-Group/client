@@ -1,0 +1,93 @@
+.case {
+	@apply w-full;
+	font-size: 15px;
+
+	&:hover {
+		.link > img {
+			@apply scale-105;
+		}
+
+		.name {
+			color: #fac26f;
+		}
+
+		.price {
+			background-color: #fac26f;
+		}
+	}
+}
+.link {
+	@apply flex flex-col items-center;
+
+	> img {
+		@apply max-w-full w-full transition-transform;
+	}
+}
+.name,
+.price {
+	@apply transition-colors;
+}
+.name {
+	@apply text-center text-ellipsis mb-3;
+}
+.price,
+.oldPrice {
+	@apply font-bold;
+}
+.price {
+	@apply py-2 px-5;
+	border-radius: 5px;
+	background-color: #f3a45d;
+	color: #413327;
+}
+.oldPrice {
+	@apply line-through mt-1.5;
+	color: #ec4f4f;
+}
+
+@media (max-width: 1200px) {
+	.link > img {
+		max-width: 250px;
+	}
+	.name {
+		font-size: 14px;
+	}
+	.price,
+	.oldPrice {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 900px) {
+	.name {
+		@apply mb-2;
+		font-size: 13px;
+	}
+	.price {
+		border-radius: 5px;
+		padding: 6px 13px;
+	}
+}
+
+@media (max-width: 750px) {
+	.link > img {
+		max-width: 220px;
+	}
+}
+
+@media (max-width: 600px) {
+	.link > img {
+		max-width: 190px;
+	}
+	.name {
+		font-size: 12px;
+	}
+	.price,
+	.oldPrice {
+		font-size: 11px;
+	}
+	.price {
+		@apply px-2.5;
+		border-radius: 3px;
+	}
+}

@@ -1,0 +1,24 @@
+MINCHEV
+18.12.2024 - Functional
+25.12.2024 - Media
+27.12.2024 - Base
+30.12.2024 - Payment systems
+
+TODAY:
+CONTRACT COLOR
+WINTER THEME
+Case not found icon media
+
+TESTINGS
+2.Favicons
+3.Image srcset
+
+3.Check errors
+4.Test functionality
+
+DESIGN
+LOGO
+CASES
+PROFILE IMAGE
+
+22.275 dram

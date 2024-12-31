@@ -1,0 +1,14 @@
+mutation OpenCase($slug: String!, $times: Int!) {
+	openCase(slug: $slug, times: $times) {
+		nameRu
+		nameEn
+		imagePath
+		rarity
+		win {
+			id
+			priceRUB
+			priceUSD
+			priceEUR
+		}
+	}
+}
