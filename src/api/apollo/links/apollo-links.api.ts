@@ -7,16 +7,14 @@ import { errorLink } from '../error/apollo-error.api'
 
 const removeTypenameLink = removeTypenameFromVariables()
 
-const GRAPHQL_SERVER = `${process.env.SERVER_URL}/api/mygraphql`
-
 const httpLink = new HttpLink({
-	uri: GRAPHQL_SERVER,
+	uri: process.env.GRAPHQL_URL as string,
 	credentials: 'include',
 })
 
 export const socketLink = new GraphQLWsLink(
 	createClient({
-		url: GRAPHQL_SERVER,
+		url: process.env.GRAPHQL_URL as string,
 		retryAttempts: 10,
 	})
 )

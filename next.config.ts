@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
 		SITE_URL: process.env.NEXT_APP_URL,
 		DOMAIN: process.env.APP_DOMAIN,
 		SERVER_URL: process.env.NEST_APP_URL,
+		NOTICE_URL: process.env.NOTICE_URL,
+		GRAPHQL_URL: process.env.GRAPHQL_URL,
 	},
 	sassOptions: {
 		silenceDeprecations: ['legacy-js-api'],

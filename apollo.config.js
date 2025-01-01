@@ -1,7 +1,7 @@
 module.exports = {
 	service: {
 		endpoint: {
-			url: 'http://localhost:4200/api/mygraphql',
+			url: 'https://server.kupidrop.ru/api/mygraphql',
 			skipSSLValidation: true,
 		},
 	},

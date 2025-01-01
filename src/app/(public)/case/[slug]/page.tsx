@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 // TODO: CHANGE TO ANOTHER LANGUAGE
 export async function generateMetadata({
 	params,
-}: ISlugParam): Promise<Metadata | undefined> {
+}: any): Promise<Metadata | undefined> {
 	const { slug } = await params
 
 	if (!slug) return

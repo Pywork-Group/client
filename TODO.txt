@@ -7,7 +7,8 @@ MINCHEV
 TODAY:
 CONTRACT COLOR
 WINTER THEME
-Case not found icon media
+wss://server.kupidrop.ru/api/mygraphql not found
+
 
 TESTINGS
 2.Favicons

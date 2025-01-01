@@ -29,6 +29,9 @@ export const metadata: Metadata = {
 	metadataBase: new URL(WEBSITE_URL),
 	authors: [{ name: COMPANY_NAME, url: WEBSITE_URL }],
 	applicationName: COMPANY_NAME,
+	other: {
+		cryptomus: '813fc16b',
+	},
 }
 
 const fontGotham = localFont({
